@@ -1,0 +1,81 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-1">
+    <ngb-panel title="Accounts" >
+      <ng-template ngbPanelContent *ngIf="accounts && accounts.length > 0 else templateLoading">
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Number</th>
+                  <th scope="col">Balance</th>
+                  <th scope="col">type</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let account of accounts; index as i">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>
+                  
+                    {{ account.number | number }}
+                  </td>
+                  <td>{{  account.balance | number }}</td>
+                  <td>{{ account.type  }}</td>
+                </tr>
+                </tbody>
+              </table>
+         </div>
+
+      </ng-template>
+      <ng-template ngbPanelContent #templateLoading>
+            <div class="text-center">
+                <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"
+                class="img-fluid " width="100"
+             />
+            </div>
+      </ng-template>
+    </ngb-panel>
+   
+</ngb-accordion>
+
+
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-3">
+    <ngb-panel title="Latest Transactions" >
+      <ng-template ngbPanelContent *ngIf="transactions && transactions.length > 0 else templateLoadingTransactions">
+        <div class="table-responsive">
+          <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Type</th>
+                <th scope="col">Account Number</th>
+                <th scope="col">Created at</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let transaction of transactions; index as i">
+                <th scope="row">{{ transaction._id }}</th>
+                <td>
+                
+                  {{ transaction.amount | number }}
+                </td>
+                <td>{{ transaction.type  }}</td>
+                <td>{{  transaction.account?.number  }}</td>
+                <td>{{  transaction.createdAt  | date: 'dd-MM-yyyy h:mm:ss a'}}</td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+
+      </ng-template>
+      <ng-template ngbPanelContent #templateLoadingTransactions>
+            <div class="text-center">
+                <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"
+                class="img-fluid " width="100"
+             />
+            </div>
+      </ng-template>
+    </ngb-panel>
+   
+</ngb-accordion>

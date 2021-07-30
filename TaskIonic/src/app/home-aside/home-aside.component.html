@@ -1,0 +1,55 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Information" >
+      <ng-template ngbPanelContent *ngIf="user else templateLoading">
+        <div>
+            <img class="img-fluid img-thumbnail" src="https://via.placeholder.com/200" > 
+        </div>  
+        <ul class="list-group">
+            <li class="list-group-item">Name : {{user.name}} </li>
+           
+          </ul>
+      </ng-template>
+      <ng-template ngbPanelContent #templateLoading>
+            <div class="text-center">
+                <img [src]="user?.image" alt=""  *ngIf="user?.image else placeholderImage">
+                <ng-template  #placeholderImage>
+                    <img  src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"
+                   
+                            class="img-fluid " width="100"
+                     />
+                </ng-template>
+                
+            </div>
+      </ng-template>
+    </ngb-panel>
+   
+</ngb-accordion>
+
+
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-5">
+    <ngb-panel title="Tools" >
+      <ng-template ngbPanelContent *ngIf="user else templateLoading">
+        
+        <ul class="list-group">
+            <li class="list-group-item"> 
+                <a href="">Calculators</a>
+            </li>
+
+            <li class="list-group-item"> 
+                <a href="">Currency Convert</a>
+            </li>
+
+            <li class="list-group-item"> 
+                <a href="">Branch Locator</a>
+            </li>
+
+            <li class="list-group-item"> 
+                <a href="">ChatBot</a>
+            </li>
+           
+          </ul>
+      </ng-template>
+     
+    </ngb-panel>
+   
+</ngb-accordion>
