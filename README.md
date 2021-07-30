@@ -33,3 +33,19 @@ Make a simple banking app:
     b)Nodejs Project + hosting it to Heroku or Amazon
 
 4- You could replace Mobile app (Ionic) by Angular Internet Banking Web app if more familier with (Latest Angular version should be used)
+
+
+
+## Task Done
+
+### Server Node
+
+Server done and deploy in heroku link `https://sleepy-everglades-54934.herokuapp.com/` .
+
+
+### Frontend Angular
+Done and deploy heroku link `https://task-frontend1235.herokuapp.com/` .
+
+### Ionic application 
+stil working , have environment error because need to run android
+
